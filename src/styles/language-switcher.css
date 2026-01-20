@@ -49,6 +49,18 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .language-switcher-container {
+    top: 12px;
+    right: 12px;
+  }
+
+  .language-switcher {
+    padding: 0.55rem 0.95rem;
+    font-size: 0.75rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .language-switcher-container {
     top: 10px;
@@ -58,5 +70,18 @@
   .language-switcher {
     padding: 0.5rem 0.8rem;
     font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .language-switcher-container {
+    top: 8px;
+    right: 8px;
+  }
+
+  .language-switcher {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.65rem;
+    gap: 0.4rem;
   }
 }

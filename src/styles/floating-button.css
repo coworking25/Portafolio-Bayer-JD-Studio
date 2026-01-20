@@ -84,6 +84,24 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .floating-button.first {
+    top: 9%;
+    left: 9%;
+  }
+
+  .floating-button.sec {
+    bottom: 14%;
+    right: 9%;
+  }
+
+  .floating-button div {
+    height: 42px;
+    width: 130px;
+    font-size: 0.85rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .floating-button.first {
     top: 8%;
@@ -99,5 +117,23 @@
     height: 40px;
     width: 120px;
     font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .floating-button.first {
+    top: 7%;
+    left: 7%;
+  }
+
+  .floating-button.sec {
+    bottom: 10%;
+    right: 7%;
+  }
+
+  .floating-button div {
+    height: 35px;
+    width: 110px;
+    font-size: 0.75rem;
   }
 }

@@ -85,3 +85,39 @@
     width: 3.5rem;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .glow-box {
+    height: 3.3rem;
+    width: 3.3rem;
+  }
+
+  .glow-box-title {
+    font-size: 0.7rem;
+    padding: 0.12rem 0.45rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .glow-box {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .glow-box-title {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.4rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .glow-box {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  .glow-box-title {
+    font-size: 0.6rem;
+    padding: 0.08rem 0.35rem;
+  }
+}

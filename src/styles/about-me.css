@@ -120,6 +120,7 @@
     align-items: center;
     gap: 1rem;
     text-align: center;
+    min-height: auto;
   }
 
   .timeline .designation {
@@ -166,6 +167,39 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .about-me {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .timeline > h1 {
+    font-size: 1.6rem;
+  }
+
+  .timeline .designation {
+    font-size: 1rem;
+  }
+
+  .timeline .place {
+    font-size: 0.95rem;
+  }
+
+  .about-me .intro {
+    padding: 1.2rem 0.8rem;
+    font-size: 1.15rem;
+  }
+
+  .about-me .intro p {
+    font-size: 1.15rem;
+    line-height: 1.7rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .about-me {
     padding: 1.5rem 1rem;
@@ -196,5 +230,37 @@
   .about-me .intro p {
     font-size: 1.1rem;
     line-height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .about-me {
+    padding: 1rem 0.8rem;
+  }
+
+  .timeline {
+    padding-left: 0.3rem;
+  }
+
+  .timeline > h1 {
+    font-size: 1.3rem;
+  }
+
+  .timeline .designation {
+    font-size: 0.95rem;
+  }
+
+  .timeline .place {
+    font-size: 0.85rem;
+  }
+
+  .about-me .intro {
+    padding: 0.8rem 0.6rem;
+    font-size: 1rem;
+  }
+
+  .about-me .intro p {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }

@@ -32,3 +32,9 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .circle {
+    display: none;
+  }
+}

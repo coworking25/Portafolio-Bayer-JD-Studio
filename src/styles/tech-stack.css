@@ -44,6 +44,7 @@
     padding: 1rem 2rem;
     flex-direction: column-reverse;
     gap: 1rem;
+    min-height: auto;
   }
 
   .tech-stack > div {
@@ -63,6 +64,33 @@
 
   .tech-row {
     gap: 0.5rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .tech-stack {
+    padding: 1rem 1.5rem;
+  }
+
+  .tech-row {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .glow-box {
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  .glow-box-title {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.5rem;
+  }
+
+  .tech-stack p {
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
 }
 
@@ -82,7 +110,36 @@
   }
 
   .glow-box-title {
-    font-size: 0.7rem;
-    padding: 0.1rem 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.1rem 0.4rem;
+  }
+
+  .tech-stack .title {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .tech-stack {
+    padding: 0.8rem 0.8rem;
+  }
+
+  .tech-row {
+    gap: 0.3rem;
+  }
+
+  .glow-box {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  .glow-box-title {
+    font-size: 0.6rem;
+    padding: 0.08rem 0.3rem;
+  }
+
+  .tech-stack p {
+    font-size: 0.95rem;
+    line-height: 1.3rem;
   }
 }

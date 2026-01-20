@@ -45,6 +45,17 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  :root {
+    --text-primary: 4.5rem;
+    --text-secondary: 5.5rem;
+  }
+
+  .section-title {
+    padding: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   :root {
     --text-primary: 3.5rem;
@@ -64,9 +75,24 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
   :root {
     --text-primary: 3rem;
     --text-secondary: 4rem;
+  }
+
+  .section-title {
+    padding: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  :root {
+    --text-primary: 2.8rem;
+    --text-secondary: 3.8rem;
+  }
+
+  .section-title {
+    padding: 0.6rem;
   }
 }

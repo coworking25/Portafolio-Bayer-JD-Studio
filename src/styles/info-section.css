@@ -89,6 +89,7 @@
   .hero-section {
     font-size: 1.5rem;
     padding: 0 0.5rem;
+    min-height: 90vh;
   }
   .hero-section .name {
     font-size: 3rem;
@@ -108,10 +109,16 @@
   .bottom-bar {
     gap: 3px;
     bottom: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 360px) {
+  .hero-section {
+    font-size: 1.2rem;
+    padding: 0 0.3rem;
+  }
   .hero-section .name {
     font-size: 2.5rem;
   }
@@ -119,9 +126,31 @@
   .contact-cta {
     padding: 0.6rem 1.2rem;
     font-size: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  .blur {
+    height: 6rem;
+    width: 6rem;
   }
 
   .bottom-bar {
     gap: 2px;
+    bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hero-section .name {
+    font-size: 2.2rem;
+  }
+
+  .contact-cta {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .bottom-bar {
+    gap: 1px;
   }
 }

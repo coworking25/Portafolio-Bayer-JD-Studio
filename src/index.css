@@ -131,3 +131,61 @@ hr:before {
     font-size: 14px;
   }
 }
+
+/* Mejores breakpoints para responsive design */
+@media screen and (max-width: 1024px) {
+  /* Tablet landscape */
+  body {
+    font-size: 16px;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Tablet portrait */
+  body {
+    font-size: 15px;
+  }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  hr:before {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* Mobile large */
+  body {
+    font-size: 14px;
+  }
+  
+  .heading {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Mobile medium */
+  body {
+    font-size: 13px;
+  }
+  
+  hr:before {
+    font-size: 1em;
+    top: 1rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /* Mobile small */
+  body {
+    font-size: 12px;
+  }
+}
