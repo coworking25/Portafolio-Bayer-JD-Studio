@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from '../config/emailjs';
+import { EMAILJS_CONFIG, validateEmailJSConfig } from '../config/emailjs';
 
 export interface ContactFormData {
   email: string;
@@ -10,6 +10,11 @@ export interface ContactFormData {
 export class ContactService {
   static async sendEmail(formData: ContactFormData): Promise<boolean> {
     try {
+      // Validate EmailJS configuration
+      if (!validateEmailJSConfig()) {
+        throw new Error('EmailJS no está configurado. Revisa las variables de entorno.');
+      }
+
       // Initialize EmailJS with your public key
       emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
 
@@ -27,10 +32,23 @@ export class ContactService {
         templateParams
       );
 
+      console.log('✅ Email enviado exitosamente:', result);
       return result.status === 200;
-    } catch (error) {
-      console.error('Error sending email:', error);
-      return false;
+    } catch (error: any) {
+      console.error('❌ Error sending email:', error);
+
+      // Provide more specific error messages
+      if (error?.text?.includes('Invalid service id')) {
+        throw new Error('Service ID de EmailJS inválido. Revisa tu configuración.');
+      }
+      if (error?.text?.includes('Invalid template id')) {
+        throw new Error('Template ID de EmailJS inválido. Revisa tu configuración.');
+      }
+      if (error?.text?.includes('Invalid user id')) {
+        throw new Error('Public Key de EmailJS inválida. Revisa tu configuración.');
+      }
+
+      throw new Error('Error al enviar el email. Inténtalo de nuevo más tarde.');
     }
   }
 

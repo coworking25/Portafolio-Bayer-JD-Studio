@@ -14,10 +14,12 @@ export const Contact = () => {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    setErrorMessage('');
 
     try {
       const success = await ContactService.sendEmail(formData);
@@ -28,11 +30,13 @@ export const Contact = () => {
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
+        setErrorMessage('Error desconocido al enviar el email.');
         setTimeout(() => setStatus('idle'), 5000);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending email:', error);
       setStatus('error');
+      setErrorMessage(error.message || 'Error al enviar el email. Inténtalo de nuevo.');
       setTimeout(() => setStatus('idle'), 5000);
     }
   };
@@ -145,7 +149,9 @@ export const Contact = () => {
                 <p className="form-message success">{t('contact.success')}</p>
               )}
               {status === 'error' && (
-                <p className="form-message error">{t('contact.error')}</p>
+                <p className="form-message error">
+                  {errorMessage || t('contact.error')}
+                </p>
               )}
             </form>
           </div>

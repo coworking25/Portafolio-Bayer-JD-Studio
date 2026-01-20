@@ -1,98 +1,123 @@
-# Configuración de EmailJS para el Formulario de Contacto
+# 🚨 CONFIGURACIÓN DE EMAILJS - PASOS OBLIGATORIOS
 
-## 🚀 Configuración Inicial
+## ❌ ERROR ACTUAL: EmailJS no está configurado
 
-### 1. Crear cuenta en EmailJS
-1. Ve a [https://www.emailjs.com/](https://www.emailjs.com/)
-2. Crea una cuenta gratuita
-3. Verifica tu email
+Estás viendo errores porque EmailJS necesita credenciales válidas. Sigue estos pasos EXACTAMENTE:
 
-### 2. Configurar Email Service
-1. En el dashboard, ve a "Email Services"
-2. Haz clic en "Add New Service"
-3. Selecciona tu proveedor de email (Gmail, Outlook, etc.)
-4. Conecta tu cuenta de email
-5. Copia el **Service ID**
+## 📋 PASO 1: Crear archivo .env
 
-### 3. Crear Email Template
-1. Ve a "Email Templates"
-2. Haz clic en "Create New Template"
-3. Usa esta plantilla:
-
+1. Copia el archivo `.env.example` como `.env`:
+```bash
+cp .env.example .env
 ```
-Subject: Nuevo mensaje de {{from_name}} desde tu portafolio
 
-De: {{from_name}} ({{from_email}})
+2. El archivo `.env` debería verse así:
+```env
+VITE_EMAILJS_SERVICE_ID=service_tu_service_id_aqui
+VITE_EMAILJS_TEMPLATE_ID=template_tu_template_id_aqui
+VITE_EMAILJS_PUBLIC_KEY=tu_public_key_aqui
+```
+
+## 🌐 PASO 2: Configurar EmailJS (5 minutos)
+
+### 2.1 Crear cuenta
+- Ve a https://www.emailjs.com/
+- Regístrate con tu email (gratis)
+
+### 2.2 Configurar Email Service
+1. Ve a "Email Services" → "Add New Service"
+2. Selecciona "Gmail" (recomendado)
+3. Conecta tu cuenta de Gmail
+4. **Copia el SERVICE ID** (ejemplo: `service_abc123def`)
+
+### 2.3 Crear Email Template
+1. Ve a "Email Templates" → "Create New Template"
+2. Usa esta plantilla EXACTA:
+
+**Subject:**
+```
+Nuevo mensaje de {{from_name}} desde tu portafolio
+```
+
+**Body:**
+```
+Hola Juan Diego,
+
+Has recibido un nuevo mensaje desde tu portafolio web:
+
+De: {{from_name}}
+Email: {{from_email}}
+
 Mensaje:
-
 {{message}}
 
 ---
-Este mensaje fue enviado desde el formulario de contacto de tu portafolio web.
+Responde directamente a: {{reply_to}}
+Enviado desde: tu-portafolio.com
 ```
 
-4. Copia el **Template ID**
+3. Guarda el template
+4. **Copia el TEMPLATE ID** (ejemplo: `template_xyz789`)
 
-### 4. Obtener Public Key
-1. Ve a "Account" > "General"
-2. Copia tu **Public Key**
+### 2.4 Obtener Public Key
+1. Ve a "Account" → "General"
+2. **Copia la PUBLIC KEY** (ejemplo: `def456ghi789`)
 
-### 5. Configurar en el proyecto
-Edita el archivo `src/config/emailjs.ts`:
+## ⚙️ PASO 3: Configurar credenciales
 
-```typescript
-export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'tu_service_id_aqui',
-  TEMPLATE_ID: 'tu_template_id_aqui',
-  PUBLIC_KEY: 'tu_public_key_aqui'
-};
+Edita el archivo `.env` con tus credenciales reales:
+
+```env
+VITE_EMAILJS_SERVICE_ID=service_abc123def
+VITE_EMAILJS_TEMPLATE_ID=template_xyz789
+VITE_EMAILJS_PUBLIC_KEY=def456ghi789
 ```
 
-## 🧪 Probar el envío de correos
+## 🧪 PASO 4: Probar el formulario
 
-1. Ejecuta el proyecto:
+1. Reinicia el servidor:
 ```bash
 npm run dev
 ```
 
-2. Ve a la sección de contacto
-3. Llena el formulario con:
-   - Nombre: Tu nombre de prueba
-   - Email: Un email válido para recibir la respuesta
-   - Mensaje: Mensaje de prueba
+2. Ve a http://localhost:5173/
 
-4. Haz clic en "Enviar Mensaje"
-5. Verifica que recibas el email en tu bandeja de entrada
+3. Llena el formulario de contacto:
+   - Nombre: Tu nombre
+   - Email: Un email real donde recibir respuesta
+   - Mensaje: "Prueba de EmailJS"
 
-## 📱 Auto respuesta de WhatsApp
+4. Envía el formulario
 
-La funcionalidad de WhatsApp incluye respuestas automáticas aleatorias que se muestran cuando alguien hace clic en el enlace de WhatsApp. Las respuestas incluyen:
+5. **Verifica que llegue el email** a `diegorpo9608@gmail.com`
 
-- Confirmación de recepción del mensaje
-- Información sobre tiempos de respuesta
-- Enlace al portafolio
-- Información de contacto alternativo
+## 🔧 SOLUCIÓN DE ERRORES
 
-## 🔧 Solución de problemas
+### ❌ "Invalid service id"
+- Verifica que el SERVICE_ID en `.env` sea correcto
 
-### Error: "Invalid service id"
-- Verifica que el SERVICE_ID sea correcto en `emailjs.ts`
+### ❌ "Invalid template id"
+- Verifica que el TEMPLATE_ID en `.env` sea correcto
 
-### Error: "Invalid template id"
-- Verifica que el TEMPLATE_ID sea correcto en `emailjs.ts`
+### ❌ "Invalid user id"
+- Verifica que la PUBLIC_KEY en `.env` sea correcta
 
-### Error: "Invalid user id"
-- Verifica que la PUBLIC_KEY sea correcta en `emailjs.ts`
+### ❌ Emails no llegan
+- Revisa carpeta de spam
+- Verifica que el email esté autorizado en EmailJS
+- Confirma que el template esté activo
 
-### Los emails no llegan
-- Verifica que tu cuenta de email esté conectada correctamente en EmailJS
-- Revisa la carpeta de spam
-- Asegúrate de que el email del remitente esté autorizado
+## ✅ CONFIRMACIÓN DE ÉXITO
 
-### Problemas con WhatsApp
-- Verifica que el número de teléfono esté en formato internacional sin "+"
-- Asegúrate de que WhatsApp Business esté configurado correctamente
+Cuando funcione correctamente, verás:
+- ✅ Mensaje de éxito en el formulario
+- ✅ Email recibido en tu bandeja
+- ✅ Sin errores en la consola del navegador
 
-## 📧 Configuración de EmailJS completada
+## 📱 WhatsApp Auto-Response
 
-¡Tu formulario de contacto ahora puede enviar emails reales y WhatsApp tiene respuestas automáticas!
+La funcionalidad de WhatsApp ya está funcionando automáticamente con respuestas aleatorias.
+
+---
+
+**⚠️ IMPORTANTE:** No subas el archivo `.env` a Git. Ya está en `.gitignore`.
