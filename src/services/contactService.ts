@@ -22,8 +22,6 @@ export class ContactService {
         from_email: formData.email,
         from_name: formData.name || 'Portfolio Visitor',
         message: formData.message,
-        to_email: 'diegorpo9608@gmail.com',
-        reply_to: formData.email,
       };
 
       const result = await emailjs.send(
@@ -36,6 +34,7 @@ export class ContactService {
       return result.status === 200;
     } catch (error: any) {
       console.error('❌ Error sending email:', error);
+      console.error('Error details:', error.text, error.status);
 
       // Provide more specific error messages
       if (error?.text?.includes('Invalid service id')) {
