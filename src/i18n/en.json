@@ -1,0 +1,122 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "brand": "BAYER JD STUDIO",
+    "tagline": "Creative Web Development",
+    "greeting": "Hi, I'm",
+    "name": "Juan Diego Restrepo Bayer",
+    "role": "Junior Frontend Developer & Creative Web Developer",
+    "location": "Medellín, Colombia",
+    "cta": "View Projects",
+    "contactBtn": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "summary": "Junior Frontend Developer and Software Development Technologist from SENA, with experience building educational and institutional web applications. Focused on modern, responsive and optimized interfaces using React and Tailwind CSS, with a strong interest in continuous learning and professional growth.",
+    "education": "Education",
+    "degree": "Software Development Technologist",
+    "institution": "SENA"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I work with",
+    "categories": {
+      "frontend": "Frontend",
+      "tools": "Tools",
+      "backend": "Backend (Basic)"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "My recent work",
+    "viewDemo": "View Website",
+    "viewCode": "View Code",
+    "viewDashboard": "View Dashboard",
+    "items": [
+      {
+        "title": "Coworking Inmobiliario - Full Platform",
+        "description": "Complete web platform for real estate company including public website with property management, real estate news, comprehensive services (rentals, sales, appraisals) and administrative dashboard with authentication, property management, users and content. Integration with Supabase for database and storage.",
+        "tech": ["React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+        "demo": "https://coworkinginmobiliario.com.co",
+        "dashboard": "https://coworkinginmobiliario.com.co/login",
+        "features": [
+          "Complete administrative dashboard",
+          "Property management with images",
+          "Secure authentication system",
+          "Real estate news panel",
+          "Responsive and modern design",
+          "Real-time database integration"
+        ]
+      },
+      {
+        "title": "SENNOVA Project - SENA",
+        "description": "Educational web application for managing research and innovation projects at SENA. Modern interface development with React, implementation of reusable components and performance optimization for better user experience.",
+        "tech": ["React", "Tailwind CSS", "JavaScript", "Vite"],
+        "demo": "#",
+        "features": [
+          "Educational project management",
+          "Intuitive and modern interface",
+          "Authentication system",
+          "Administration panel"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey",
+    "items": [
+      {
+        "title": "Frontend Developer",
+        "place": "@SENA (SENNOVA Project)",
+        "timePeriod": "2023 - Present",
+        "description": "Development of educational web applications using React and Tailwind CSS. Team collaboration for feature implementation and user experience improvement."
+      },
+      {
+        "title": "Frontend Developer",
+        "place": "@Coworking Inmobiliario",
+        "timePeriod": "2024",
+        "description": "Development of complete web platform with React, TypeScript and Supabase. Implementation of administrative dashboard with secure authentication."
+      },
+      {
+        "title": "Digital Marketing Assistant",
+        "place": "@Bonsai Gaman",
+        "timePeriod": "2022 - 2023",
+        "description": "Support in digital content management and website maintenance. Creation of graphic pieces and web platform updates."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "send": "Send Message",
+    "or": "Or you can also find me at:",
+    "success": "Message sent successfully!",
+    "error": "There was an error sending the message.",
+    "personalInfo": {
+      "email": "diegorpo5008@gmail.com",
+      "phone": "+57 302 824 0488",
+      "whatsapp": "573028240488",
+      "location": "Medellín, Colombia",
+      "status": "Single",
+      "nationality": "Colombian"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by",
+    "brand": "BAYER JD STUDIO"
+  }
+}

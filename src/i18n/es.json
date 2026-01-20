@@ -1,0 +1,122 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "brand": "BAYER JD STUDIO",
+    "tagline": "Creative Web Development",
+    "greeting": "Hola, soy",
+    "name": "Juan Diego Restrepo Bayer",
+    "role": "Desarrollador Frontend Junior & Desarrollador Web Creativo",
+    "location": "Medellín, Colombia",
+    "cta": "Ver Proyectos",
+    "contactBtn": "Contactar"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "summary": "Desarrollador Frontend Junior y Tecnólogo en Análisis y Desarrollo de Software del SENA, con experiencia en el desarrollo de aplicaciones web educativas e institucionales. Enfocado en la creación de interfaces modernas, responsivas y optimizadas, utilizando React y Tailwind CSS, con interés constante en el aprendizaje continuo y el crecimiento profesional.",
+    "education": "Educación",
+    "degree": "Tecnólogo en Análisis y Desarrollo de Software",
+    "institution": "SENA"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Tecnologías con las que trabajo",
+    "categories": {
+      "frontend": "Frontend",
+      "tools": "Herramientas",
+      "backend": "Backend (Básico)"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Mis trabajos recientes",
+    "viewDemo": "Ver Sitio Web",
+    "viewCode": "Ver Código",
+    "viewDashboard": "Ver Dashboard",
+    "items": [
+      {
+        "title": "Coworking Inmobiliario - Plataforma Completa",
+        "description": "Plataforma web completa para empresa inmobiliaria incluyendo sitio público con gestión de propiedades, noticias inmobiliarias, servicios integrales (arrendamientos, ventas, avalúos) y dashboard administrativo con autenticación, gestión de propiedades, usuarios y contenido. Integración con Supabase para base de datos y almacenamiento.",
+        "tech": ["React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+        "demo": "https://coworkinginmobiliario.com.co",
+        "dashboard": "https://coworkinginmobiliario.com.co/login",
+        "features": [
+          "Dashboard administrativo completo",
+          "Gestión de propiedades con imágenes",
+          "Sistema de autenticación seguro",
+          "Panel de noticias inmobiliarias",
+          "Diseño responsivo y moderno",
+          "Integración con base de datos en tiempo real"
+        ]
+      },
+      {
+        "title": "Proyecto SENNOVA - SENA",
+        "description": "Aplicación web educativa para la gestión de proyectos de investigación e innovación del SENA. Desarrollo de interfaz moderna con React, implementación de componentes reutilizables y optimización del rendimiento para una mejor experiencia de usuario.",
+        "tech": ["React", "Tailwind CSS", "JavaScript", "Vite"],
+        "demo": "#",
+        "features": [
+          "Gestión de proyectos educativos",
+          "Interfaz intuitiva y moderna",
+          "Sistema de autenticación",
+          "Panel de administración"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "Mi trayectoria profesional",
+    "items": [
+      {
+        "title": "Desarrollador Frontend",
+        "place": "@SENA (Proyecto SENNOVA)",
+        "timePeriod": "2023 - Presente",
+        "description": "Desarrollo de aplicaciones web educativas utilizando React y Tailwind CSS. Colaboración en equipo para la implementación de funcionalidades y mejora de la experiencia de usuario."
+      },
+      {
+        "title": "Desarrollador Frontend",
+        "place": "@Coworking Inmobiliario",
+        "timePeriod": "2024",
+        "description": "Desarrollo de plataforma web completa con React, TypeScript y Supabase. Implementación de dashboard administrativo con autenticación segura."
+      },
+      {
+        "title": "Asistente de Marketing Digital",
+        "place": "@Bonsai Gaman",
+        "timePeriod": "2022 - 2023",
+        "description": "Apoyo en la gestión de contenidos digitales y mantenimiento de sitios web. Creación de piezas gráficas y actualización de plataformas web."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "send": "Enviar Mensaje",
+    "or": "O también puedes encontrarme en:",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Hubo un error al enviar el mensaje.",
+    "personalInfo": {
+      "email": "diegorpo5008@gmail.com",
+      "phone": "+57 302 824 0488",
+      "whatsapp": "573028240488",
+      "location": "Medellín, Colombia",
+      "status": "Soltero",
+      "nationality": "Colombiano"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por",
+    "brand": "BAYER JD STUDIO"
+  }
+}

@@ -1,0 +1,87 @@
+.glow-box-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.glow-box-link:hover {
+  transform: translateY(-7px);
+}
+
+.glow-box {
+  height: 4.2rem;
+  width: 4.2rem;
+  border-radius: 10px;
+  box-shadow:
+    inset 0px 0px 1px 0px var(--glow-color),
+    inset 0px 0px 8px 0px var(--glow-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition-duration: 300ms;
+}
+
+.glow-box::before {
+  position: absolute;
+  content: '';
+  bottom: -60%;
+  height: 70%;
+  border-radius: 100%;
+  width: 70%;
+  background-color: var(--glow-color);
+  filter: blur(10px);
+}
+
+.glow-box::after {
+  position: absolute;
+  content: '';
+  height: 40%;
+  width: 40%;
+  border-radius: 100%;
+  opacity: 80%;
+  background-color: var(--glow-color);
+  filter: blur(7px);
+}
+
+.glow-box:hover {
+  box-shadow:
+    inset 0px 0px 1px 0px var(--glow-color),
+    inset 0px 0px 8px 0px var(--glow-color),
+    0px 0px 7px 1px var(--glow-color);
+}
+
+.glow-box:hover::before {
+  bottom: -47%;
+}
+
+.glow-box > svg,
+.glow-box-link > svg {
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+}
+
+.glow-box p {
+  position: absolute;
+  bottom: -25px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+.glow-box:hover p {
+  opacity: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .glow-box {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
