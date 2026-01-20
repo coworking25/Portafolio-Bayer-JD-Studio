@@ -44,3 +44,29 @@
     top: 0rem;
   }
 }
+
+@media screen and (max-width: 480px) {
+  :root {
+    --text-primary: 3.5rem;
+    --text-secondary: 4.5rem;
+  }
+
+  .section-title {
+    padding: 1rem;
+  }
+
+  .section-title h2 {
+    font-size: var(--text-primary);
+  }
+
+  .section-title span {
+    font-size: var(--text-secondary);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  :root {
+    --text-primary: 3rem;
+    --text-secondary: 4rem;
+  }
+}

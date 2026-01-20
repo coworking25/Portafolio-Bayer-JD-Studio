@@ -156,4 +156,45 @@
     font-size: 1rem;
     letter-spacing: 0.05rem;
   }
+
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline::after {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-me {
+    padding: 1.5rem 1rem;
+  }
+
+  .timeline {
+    padding-left: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .timeline > h1 {
+    font-size: 1.5rem;
+  }
+
+  .timeline .designation {
+    font-size: 1rem;
+  }
+
+  .timeline .place {
+    font-size: 0.9rem;
+  }
+
+  .about-me .intro {
+    padding: 1rem 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  .about-me .intro p {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
 }

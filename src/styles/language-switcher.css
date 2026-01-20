@@ -48,3 +48,15 @@
     font-size: 0.8rem;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .language-switcher-container {
+    top: 10px;
+    right: 10px;
+  }
+
+  .language-switcher {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}

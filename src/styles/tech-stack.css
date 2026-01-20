@@ -65,3 +65,24 @@
     gap: 0.5rem;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .tech-stack {
+    padding: 1rem 1rem;
+  }
+
+  .tech-row {
+    gap: 0.4rem;
+    justify-content: center;
+  }
+
+  .glow-box {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .glow-box-title {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.5rem;
+  }
+}

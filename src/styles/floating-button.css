@@ -65,3 +65,39 @@
 .floating-button.sec::before {
   background-color: var(--accentHi);
 }
+
+@media screen and (max-width: 768px) {
+  .floating-button.first {
+    top: 10%;
+    left: 10%;
+  }
+
+  .floating-button.sec {
+    bottom: 15%;
+    right: 10%;
+  }
+
+  .floating-button div {
+    height: 45px;
+    width: 140px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .floating-button.first {
+    top: 8%;
+    left: 8%;
+  }
+
+  .floating-button.sec {
+    bottom: 12%;
+    right: 8%;
+  }
+
+  .floating-button div {
+    height: 40px;
+    width: 120px;
+    font-size: 0.8rem;
+  }
+}
