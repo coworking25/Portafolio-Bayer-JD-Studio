@@ -50,9 +50,7 @@ export const Contact = () => {
 
   return (
     <section className="contact-section container" id="contact">
-      <div>
-        <SectionTitle title={t('contact.title').split(' ')[0]} subTitle={t('contact.title').split(' ')[1] || ''} />
-      </div>
+      <SectionTitle title={t('contact.title').split(' ')[0]} subTitle={t('contact.title').split(' ')[1] || ''} />
       <div>
         <div className="contact-intro">
           <p>{t('contact.subtitle')}</p>
