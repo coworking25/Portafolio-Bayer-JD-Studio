@@ -4,22 +4,37 @@ import { SectionTitle } from '../components/SectionTitle';
 import { GlowBoxLink } from '../components/GlowBoxLink';
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import { IoMailOutline } from 'react-icons/io5';
+import { ContactService, ContactFormData } from '../services/contactService';
 
 export const Contact = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: '',
     email: '',
     message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí puedes implementar el envío del formulario
-    // Por ahora solo mostramos mensaje de éxito
-    setStatus('success');
-    setTimeout(() => setStatus('idle'), 3000);
-    setFormData({ email: '', message: '' });
+    setStatus('loading');
+
+    try {
+      const success = await ContactService.sendEmail(formData);
+
+      if (success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,7 +81,7 @@ export const Contact = () => {
                   aria-label="linkedin"
                 />
                 <GlowBoxLink
-                  href={`https://wa.me/${t('contact.personalInfo.whatsapp')}`}
+                  href={ContactService.getWhatsAppAutoResponseLink()}
                   icon={<FaWhatsapp size={24} color="rgb(37, 211, 102)" />}
                   color="rgb(37, 211, 102, 0.7)"
                   aria-label="whatsapp"
@@ -83,6 +98,19 @@ export const Contact = () => {
 
           <div className="contact-form-wrapper">
             <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">{t('contact.name')}</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder={t('contact.namePlaceholder')}
+                  required
+                />
+              </div>
+
               <div className="form-group">
                 <label htmlFor="email">{t('contact.email')}</label>
                 <input
@@ -109,8 +137,8 @@ export const Contact = () => {
                 />
               </div>
 
-              <button type="submit" className="submit-btn">
-                {t('contact.send')}
+              <button type="submit" className="submit-btn" disabled={status === 'loading'}>
+                {status === 'loading' ? t('contact.sending') : t('contact.send')}
               </button>
 
               {status === 'success' && (

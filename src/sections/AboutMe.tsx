@@ -43,7 +43,7 @@ export const AboutMe = () => {
           <p>
             📍 <strong>{t('navbar.contact')}:</strong> {t('contact.personalInfo.location')}
             <br />
-            📧 <strong>Email:</strong> {t('contact.personalInfo.email')}
+            📧 <strong>Email:</strong> diegorpo9608@gmail.com
             <br />
             📱 <strong>{t('navbar.contact')}:</strong> {t('contact.personalInfo.phone')}
           </p>
